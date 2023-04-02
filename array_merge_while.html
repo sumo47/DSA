@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en"> 
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge two array using while loop</title>
+</head>
+
+<body>
+    <script>
+        function MergeArray() {
+            let arr1 = document.getElementById('FirstArray').value
+            arr1 = arr1.split("").map(Number) //!why does not works split function on numbers
+            let arr2 = document.getElementById('SecondArray').value
+            arr2 = arr2.split("").map(Number)
+            // document.write(arr1)
+
+            let a1 = 0;
+            let a2 = 0;
+            let a3 = 0;
+            let arr3 = []
+
+            while (a1 < arr1.length && a2 < arr2.length) {
+                if (arr1[a1] < arr2[a2]) {
+                    arr3[a3] = arr1[a1]
+                    a1++
+                } else {
+                    arr3[a3] = arr2[a2]
+                    a2++
+                }
+                a3++
+            }
+            while (a1 < arr1.length) {
+                arr3[a3] = arr1[a1]
+                a3++
+                a1++
+            }
+            while (a2 < arr2.length) { 
+                arr3[a3] = arr2[a2]
+                a3++
+                a2++
+            }
+            document.write(`<h1> Merged Array - ${arr3}<h1/>`)
+        }
+    </script>
+
+<div style="border: solid;">
+    <div>
+        <input style="width:200px; height: 30px;" type="text" name="" id="FirstArray" placeholder="Enter First Array Shorted Element">
+        <input style="width:220px; height: 30px; margin-left: 189px;" type="text" name="" id="SecondArray" placeholder="Enter Second Array Shorted Element">
+    </div>
+
+    <button style="margin: 50px 200px auto 280px; color: red;" type="submit" onclick="MergeArray()">Merge</button>
+</div>
+</body>
+
+</html>

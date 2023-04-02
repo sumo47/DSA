@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Insert Element in Array</title>
+    <script>
+        let array = [60, 10, 20, 30, 70, 11];
+        let newEl = document.getElementById('New_Element').value;
+        let position = document.getElementById('P').value;
+        document.write(array)
+
+
+        // for (let i = array.length - 1; i >= position; i--) {
+        //     document.write(`<br/>-${array[i]}<br/>`)
+
+        //     // console.warn(array[i])
+        //     // if(i>=position){
+        //     //     array[i+1] = array[i]
+        //     //     if(i==position){
+        //     //         array[i] = newEl
+        //     //     }
+        //     // }
+        // }
+        // document.write(array)
+
+        function InsertElement() {
+            let array = [60, 10, 20, 30, 70, 11];
+            let newEl = document.getElementById('New_Element').value;
+            let position = document.getElementById('P').value;
+            // document.write(array)
+
+            for (let i = array.length - 1; i >= position; i--) {
+                if (i >= position) {
+                    array[i + 1] = array[i]
+                } 
+                if (i == position) {
+                    array[i] = newEl
+                }
+            }
+            document.write(`<h1>New Array = <h1/><br/>${array}`)
+        }
+
+
+    </script>
+</head> 
+
+<body>
+    <h1>let array = [60, 10, 20, 30, 70, 11];</h1>
+    <input type="text" id="New_Element" placeholder="New Element">
+    <input type="text" id="P" placeholder="Position">
+    <button onclick="InsertElement()">Add</button>
+</body>
+
+</html>

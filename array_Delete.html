@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete Element in Array</title>
+    <script>
+        function RemoveElement() {
+            let index = document.getElementById('Element').value
+            index = parseInt(index)
+            let array = [11, 22, 33, 44, 55, 66, 77]
+            for(let i = index; i<array.length; i++){
+                array[i] = array[i+1]
+            }
+            array.length = array.length-1
+            document.write(`<h1>New Array is = ${array}</h1>`)
+            console.warn(array)
+        }
+    </script> 
+</head>
+
+<body>
+    <h1>Let Array = [11, 22, 33, 44, 55, 66, 77]</h1><br>
+    <input type="text" name="" id="Element" placeholder="Enter index of element">
+    <button onclick="RemoveElement()">Remove Element</button>
+</body>
+
+</html>

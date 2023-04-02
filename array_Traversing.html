@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Array Traversing</title>
+    <script>
+        let data = [1, 2, 5, 8, 9, 6, 63, 9, 999, 45, 89, 81, 92, 69, 33, 51, 58, 67, 69]
+
+        // for(let i=0;i<data.length;i++){
+
+        //     document.write(`Array ${[i]} is ${data[i]} <br/>`)
+        // }
+        function getElement() {
+            let value = document.getElementById('element').value
+            // value = Math.abs(value)
+            if (value < data.length && typeof (parseInt(value)) === "number" && value >= 0) {
+                alert(data[value])
+            }
+            else {
+                alert("Please Enter the valid number!")
+            }
+            console.log(typeof parseInt(value)) //number
+
+        }
+    </script>
+</head>
+
+<body>
+    <h2>
+        let data =[1,2,5,8,9,6,63,9,999,45,89,81,92,69,33,51,58,67,69]
+    </h2>
+    <input type="text" name="" id="element">
+    <button onclick="getElement()">Get Element</button>
+</body>
+
+</html>

@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Element in Array</title>
+    <script>
+        function SearchIndex() {
+            let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+            let element = document.getElementById('Element').value
+            element = parseInt(element)
+            let index = undefined
+            for (let i in data) {
+                if (data[i] === element) {
+                    index = i
+                    break; //this will break the loop
+                }
+            }
+            return document.write(`<h1>The ${element} exist in index ${index} of array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]</h1>`)
+        }
+    </script>
+</head>
+
+<body>
+    <h1>let data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]</h1>
+    <input type="text" name="" id="Element" placeholder="Element you want to search">
+    <button onclick="SearchIndex()">Search</button>
+    <p>indexOf = search</p>
+    splice = Delete
+
+</body>
+
+</html>
